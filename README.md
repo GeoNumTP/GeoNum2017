@@ -1,29 +1,3 @@
-# GeoNum2017 : Géométrie numérique, spring 2017 
-
-## TP1 : Bézier curves, De Casteljau’s algorithm
-
-### Python
-If you have no prior experience with Python whatsoever, I suggest the tutorial
-[Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
-For longer and more complete references, see the [Fast Lane to Python](http://heather.cs.ucdavis.edu/~matloff/Python/PLN/FastLanePython.pdf) by Norm Matloff and, of course, the [official Python 2.7.13 docs](https://docs.python.org/2/).
-
-### NumPy
-[NumPy](http://www.numpy.org/) is a Python package supporting N-dimensional arrays and linear algebra operations. We'll mostly use it to manipulate datapoints stored in matrices (two-dimensional arrays).
-Here is a useful [numpy cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf).
-
-### Matplotlib
-[Matplotlib](http://matplotlib.org/) is a Python 2D plotting library -- we'll use it to visualise 2D curves 
-via the [plot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot) command.
-{% highlight python %}
-# import the modules
-import numpy as np
-import matplotlib.pyplot as plt
-# generate random data
-points = np.random.rand(1000,2)
-# plot
-plt.plot(points[:,0],points[:,1],'bo')
-{% endhighlight %}
-=======
 # Géométrie numérique, spring 2017
 Welcome to the github repository of the course *Géométrie numérique* 2017.
 See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
@@ -129,10 +103,27 @@ git clone https://github.com/GeoNumTP/GeoNum2017.git
 cd GeoNum2017
 python TP1/tp1.py
 ```
+You should see something like the following figure.
+![simple Bezier control polygon](https://raw.githubusercontent.com/GeoNumTP/GeoNum2017/master/_assets/simple.png)
+
+To test with different datasets and sampling densities, you can pass the arguments directly in the command line
+```bash
+python [simple,infinity,spiral]  [sampling_density]
+```
+for instance
+```bash
+python spiral 24
+```
 
 ### Code structure
+The code in `tp1.py` contains three helper functions plus the main part.
+* `ReadPolygon` : reads Bézier curve control polygon from a file. The result is returned as a 2-column matrix.
+* `DeCasteljau` : returns the point b_i^k from De Casteljau algorithm.
+* `BezierCurve` : uniform evaluation of the Bézier curve.
+* main part : controls the computation and plots results. 
+
 
 ### ToDo
-1. Implement the De Casteljau algorithm and use it to evaluate the Bézier curves in the `data` folder. Visualise the curves together with their control polygons.
+1. Implement the De Casteljau algorithm (`DeCasteljau`) and use it to evaluate the provided Bézier curves (`BezierCurve`). Visualise the curves together with their control polygons.
 2. Try varying the sampling density. How many samples are needed to give the impression of a smooth curve?
 3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in the above schema represents one such polygon.
