@@ -47,14 +47,14 @@ def ReadPolygon( filename ) :
 #
 # Input
 #    BezierPts :  #B x 2 matrix of Bezier control points
-#    n         :  upper index of the computed point (depth of the algorithm)
+#    k         :  upper index of the computed point (depth of the algorithm)
 #    i         :  lower index of the computed point
 #    t         :  curve parameter in [0.0,1.0]
 #
 # Output
-#    point b_i^n from the De Casteljau algorithm.
+#    point b_i^k from the De Casteljau algorithm.
 #
-def DeCasteljau( BezierPts, n, i, t ) :
+def DeCasteljau( BezierPts, k, i, t ) :
     pass
     #
     # TODO : Implement the De Casteljau algorithm.
@@ -69,7 +69,7 @@ def DeCasteljau( BezierPts, n, i, t ) :
 #    BezierPts :  #B x 2 matrix of Bezier control points
 #    N         :  number of curve samples
 #
-def BezierCurve( BezierPts, N ) :
+def     ( BezierPts, N ) :
     
     # degree of the curve (one less than the number of control points)
     degree = BezierPts.shape[0]-1
@@ -95,7 +95,7 @@ def BezierCurve( BezierPts, N ) :
     #
     # hint3:
     # the actual point b_0^degree on the curve is computed by calling DeCasteljau
-    # with arguments n=degree, i=0.
+    # with arguments k=degree, i=0.
     #
     
     return CurvePts
