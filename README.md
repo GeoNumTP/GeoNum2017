@@ -2,14 +2,12 @@
 Welcome to the github repository of the course *Géométrie numérique* 2017.
 See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
 
-## TP1 : Bézier curves, De Casteljau’s algorithm
-
-### Python
+## Python
 If you have no prior experience with Python whatsoever, I suggest the tutorial
 [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
 For longer and more complete references, see the [Fast Lane to Python](http://heather.cs.ucdavis.edu/~matloff/Python/PLN/FastLanePython.pdf) by Norm Matloff and, of course, the [official Python 2.7 docs](https://docs.python.org/2/).
 
-### NumPy
+## NumPy
 [NumPy](http://www.numpy.org/) is a Python package supporting N-dimensional arrays and linear algebra operations. We'll mostly use it to manipulate datapoints stored in matrices (two-dimensional arrays).
 If you're not familiar with numpy, have a look at this [cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf).
 
@@ -81,7 +79,7 @@ print i
  [4 5 6]]
 ```
 
-### Matplotlib
+## Matplotlib
 [Matplotlib](http://matplotlib.org/) is a Python 2D plotting library -- we'll use it to visualise 2D curves 
 via the [plot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot) command.
 
@@ -96,3 +94,19 @@ via the [plot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot)
 >>> plt.plot( A[:,0], A[:,1], 'bo')
 >>> plt.show()
 ```
+
+## TP1 : Bézier curves, De Casteljau’s algorithm
+In this TP, you'll implement the De Casteljau’s algorithm, and you'll use it to compute and visualise the curves in the `data` folder. Start by cloning the repo and testing the code for the TP1.
+```bash
+cd your/working/dir/
+git clone https://github.com/GeoNumTP/GeoNum2017.git
+cd GeoNum2017
+python TP1/tp1.py
+```
+
+### Code structure
+
+### ToDo
+1. Implement the De Casteljau algorithm and use it to evaluate the Bézier curves in the `data` folder. Visualise the curves together with their control polygons.
+2. Try varying the sampling density. How many samples are needed to give the impression of a smooth curve?
+3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in the above schema represents one such polygon.
