@@ -33,6 +33,14 @@ Here are some useful numpy commands; you can test them in the `python` console.
 [ 0.          0.11111111  0.22222222  0.33333333  0.44444444  0.55555556
   0.66666667  0.77777778  0.88888889  1.        ]
   
+# define a range
+>>> i = np.arange(10)   # same as np.arange(0,10)
+print i
+[0 1 2 3 4 5 6 7 8 9]
+>>> j = np.arange(5,45,10)
+>>> print j
+[ 5 15 25 35]
+
 # get dimensions of a matrix
 >>> S = A.shape
 >>> print S[0]  # number of rows in A 
@@ -78,11 +86,13 @@ Here are some useful numpy commands; you can test them in the `python` console.
 via the [plot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot) command.
 
 ```python
-# import the modules
-import numpy as np
-import matplotlib.pyplot as plt
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+
 # generate random data
-points = np.random.rand(1000,2)
-# plot
-plt.plot(points[:,0],points[:,1],'bo')
+>>> A = np.random.rand(1000,2)
+
+# plot & render
+>>> plt.plot( A[:,0], A[:,1], 'bo')
+>>> plt.show()
 ```
