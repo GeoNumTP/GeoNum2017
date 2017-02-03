@@ -3,20 +3,19 @@ In this TP, you'll implement the De Casteljau’s algorithm, and you'll use it t
 ```bash
 cd your/working/dir/
 git clone https://github.com/GeoNumTP/GeoNum2017.git
-cd GeoNum2017
-python TP1/tp1.py
+cd GeoNum2017/TP1
+python tp1.py
 ```
 You should see something like the following figure.
 
 <img alt="simple Bezier control polygon" src="https://raw.githubusercontent.com/GeoNumTP/GeoNum2017/master/_assets/simple.png" width="500">
 
-To test with different datasets and sampling densities, you can pass the arguments directly in the command line
+To test with different datasets and sampling densities, you can pass the arguments directly in the command line.
 ```bash
-python [simple,infinity,spiral]  [sampling_density]
-```
-for instance
-```bash
-python spiral 24
+python tp1.py [simple,infinity,spiral]  [sampling_density]
+
+# for instance
+python tp1.py spiral 24
 ```
 
 ### Code structure
