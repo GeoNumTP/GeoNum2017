@@ -8,6 +8,17 @@ git clone https://github.com/GeoNumTP/GeoNum2017.git
 cd GeoNum2017
 ```
 
+## Syllabus
+1. [Bézier curves, De Casteljau’s algorithm](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP1)  
+1. Bézier splines
+1. B-splines
+1. Subdivision curves
+1. Subdivision B-curves
+1. Bézier surfaces
+1. B-spline surfaces
+1. Subdivision B-surfaces
+1. Triangle mesh subdivision
+
 ## Python
 If you have no prior experience with Python whatsoever, I suggest the tutorial
 [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
@@ -86,9 +97,8 @@ Here are some useful numpy commands; you can test them in the `python` console.
 ```
 
 ## Matplotlib
-[Matplotlib](http://matplotlib.org/) is a Python 2D plotting library -- we'll use it to visualise 2D curves 
-via [pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot).
-
+[Matplotlib](http://matplotlib.org/) is a Python 2D plotting library - we'll use it to visualise 2D curves 
+via [pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot).  
 Example:
 ```python
 >>> import numpy as np
