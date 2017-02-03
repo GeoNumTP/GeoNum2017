@@ -7,7 +7,8 @@ cd GeoNum2017
 python TP1/tp1.py
 ```
 You should see something like the following figure.
-![simple Bezier control polygon](https://raw.githubusercontent.com/GeoNumTP/GeoNum2017/master/_assets/simple.png)
+
+<img alt="simple Bezier control polygon" src="https://raw.githubusercontent.com/GeoNumTP/GeoNum2017/master/_assets/simple.png" width="500">
 
 To test with different datasets and sampling densities, you can pass the arguments directly in the command line
 ```bash
@@ -29,4 +30,5 @@ The code in `tp1.py` contains three helper functions plus the main part.
 ### ToDo
 1. Implement the De Casteljau algorithm (`DeCasteljau`) and use it to evaluate the provided Bézier curves (`BezierCurve`). Visualise the curves together with their control polygons.
 2. Try varying the sampling density. How many samples are needed to give the impression of a smooth curve?
-3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in [the schema](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html#decasteljau-schema) represents one such polygon.
+3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in [the schema](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html#decasteljau-schema) represents one such polygon.  
+<img alt="De Casteljau intermediate polygons" width="400" src="https://raw.githubusercontent.com/bbrrck/bbrrck.github.io/master/assets/geo-num-2016/casteljau-curve.png">
