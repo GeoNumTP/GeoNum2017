@@ -69,7 +69,7 @@ def DeCasteljau( BezierPts, k, i, t ) :
 #    BezierPts :  #B x 2 matrix of Bezier control points
 #    N         :  number of curve samples
 #
-def     ( BezierPts, N ) :
+def BezierCurve( BezierPts, N ) :
     
     # degree of the curve (one less than the number of control points)
     degree = BezierPts.shape[0]-1
