@@ -56,9 +56,9 @@ def ReadPolygon( filename ) :
 #
 def DeCasteljau( BezierPts, k, i, t ) :
     pass
-    #
-    # TODO : Implement the De Casteljau algorithm.
-    #
+    #########
+    ## TODO : Implement the De Casteljau algorithm.
+    #########
 
 
 #-------------------------------------------------
@@ -66,8 +66,11 @@ def DeCasteljau( BezierPts, k, i, t ) :
 # Compute points on the Bezier curve.
 #
 # Input
-#    BezierPts :  #B x 2 matrix of Bezier control points
+#    BezierPts :  (degree+1) x 2 matrix of Bezier control points
 #    N         :  number of curve samples
+#    
+# Output
+#    CurvePts  :  N x 2 matrix of curvepoints
 #
 def BezierCurve( BezierPts, N ) :
     
@@ -77,9 +80,9 @@ def BezierCurve( BezierPts, N ) :
     # initialize curvepoints as zeros
     CurvePts = np.zeros([N,2])
     
-    #
-    # TODO : Compute N curve points for t varying uniformly in [0.0,1.0]
-    
+    #########
+    ## TODO : Compute N curve points for t varying uniformly in [0.0,1.0]
+    #########
     #
     # hint1:
     # to generate the uniform sampling of the interval [0.0,1.0] with N elements, use:
@@ -128,7 +131,7 @@ if __name__ == "__main__":
         # read control points
         BezierPts = ReadPolygon(filename)
 
-        # compute points
+        # compute curve points
         CurvePts = BezierCurve(BezierPts,density)
 
         # plot
@@ -145,16 +148,17 @@ if __name__ == "__main__":
         # plot the curve
         plt.plot( CurvePts[:,0], CurvePts[:,1], 'r-' )
         
-        #
-        # TODO : Uncomment this if you want to save the render as png image.
-        #
+        #########
+        ## TODO : Uncomment if you want to save the render as png image in the data/ dir
+        #########
         #plt.savefig( DATADIR + dataname + ".png" )
         
-        #
-        # TODO : Compute intermediate polygons b_i^k for k=1,...,degree-1 and i=0,...,degree-k
-        #
-        #
-        # TODO : Add plt.plot commands to plot the intermediate polygons
-        #
+        #########
+        ## TODO : Compute intermediate polygons b_i^k for k=1,...,degree-1 and i=0,...,degree-k
+        #########
+        
+        #########
+        ## TODO : Add plt.plot commands to plot the intermediate polygons
+        #########
         
         plt.show()
