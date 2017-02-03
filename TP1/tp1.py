@@ -46,7 +46,7 @@ def ReadPolygon( filename ) :
 # Perform the De Casteljau algorithm.
 #
 # Input
-#    BezierPts :  #B x 2 matrix of Bezier control points
+#    BezierPts :  (degree+1) x 2 matrix of Bezier control points
 #    k         :  upper index of the computed point (depth of the algorithm)
 #    i         :  lower index of the computed point
 #    t         :  curve parameter in [0.0,1.0]
