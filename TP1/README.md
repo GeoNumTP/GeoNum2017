@@ -29,4 +29,4 @@ The code in `tp1.py` contains three helper functions plus the main part.
 ### ToDo
 1. Implement the De Casteljau algorithm (`DeCasteljau`) and use it to evaluate the provided Bézier curves (`BezierCurve`). Visualise the curves together with their control polygons.
 2. Try varying the sampling density. How many samples are needed to give the impression of a smooth curve?
-3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in the above schema represents one such polygon.
+3. Pick one dataset and visualise *all* intermediate polygons `b_i^k` from the De Casteljau algorithm for a fixed parameter, for instance `t=0.5`. **Hint**: each column in [the schema](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html#decasteljau-schema) represents one such polygon.
