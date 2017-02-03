@@ -2,6 +2,12 @@
 Welcome to the github repository of the course *Géométrie numérique* 2017.
 See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
 
+```bash
+cd your/working/dir/
+git clone https://github.com/GeoNumTP/GeoNum2017.git
+cd GeoNum2017
+```
+
 ## Python
 If you have no prior experience with Python whatsoever, I suggest the tutorial
 [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
@@ -33,7 +39,7 @@ Here are some useful numpy commands; you can test them in the `python` console.
   
 # define a range
 >>> i = np.arange(10)   # same as np.arange(0,10)
-print i
+>>> print i
 [0 1 2 3 4 5 6 7 8 9]
 >>> j = np.arange(5,45,10)
 >>> print j
@@ -81,16 +87,27 @@ print i
 
 ## Matplotlib
 [Matplotlib](http://matplotlib.org/) is a Python 2D plotting library -- we'll use it to visualise 2D curves 
-via the [plot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot) command.
+via [pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot).
 
+Example:
 ```python
 >>> import numpy as np
 >>> import matplotlib.pyplot as plt
 
 # generate random data
 >>> A = np.random.rand(1000,2)
+>>> x = A[:,0]
+>>> y = A[:,1]
 
-# plot & render
->>> plt.plot( A[:,0], A[:,1], 'bo')
+# plot blue circles
+>>> plt.plot( x, y, 'bo')
+
+# plot solid red lines
+>>> plt.plot( x, y, 'r-')
+
+# render and show the plot
 >>> plt.show()
+
+# plot dashed green lines and blue circles
+>>> plt.plot(x, y, color='green', linestyle='dashed', marker='o', markerfacecolor='blue', markersize=12)
 ```
