@@ -9,7 +9,7 @@ cd GeoNum2017
 ```
 
 ## Syllabus
-1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP1)  
+1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
 1. Bézier splines
 1. B-splines
 1. Subdivision curves
