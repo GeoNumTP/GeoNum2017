@@ -1,11 +1,13 @@
 # Géométrie numérique, spring 2017
-Welcome to the github repository of the course *Géométrie numérique* 2017.
+Welcome to the github repository of the course *Géométrie numérique* 2017.  
 See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
 
+## Quickstart
 ```bash
 cd your/working/dir/
 git clone https://github.com/GeoNumTP/GeoNum2017.git
 cd GeoNum2017
+python TP1/tp1.py
 ```
 
 ## Syllabus
@@ -19,10 +21,16 @@ cd GeoNum2017
 1. Subdivision B-surfaces
 1. Triangle mesh subdivision
 
+## Resources
+* [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/)
+* [Python 2.7 tutorial](https://docs.python.org/2.7/tutorial/)
+* [NumPy quickstart tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+* [Matplotlib.pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot)
+
 ## Python
 If you have no prior experience with Python whatsoever, I suggest the tutorial
 [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
-For longer and more complete references, see the [Fast Lane to Python](http://heather.cs.ucdavis.edu/~matloff/Python/PLN/FastLanePython.pdf) by Norm Matloff and, of course, the [official Python 2.7 docs](https://docs.python.org/2/).
+For longer and more complete references, see the [Fast Lane to Python](http://heather.cs.ucdavis.edu/~matloff/Python/PLN/FastLanePython.pdf) by Norm Matloff and, of course, the [official Python 2.7 tutorial](https://docs.python.org/2.7/tutorial/).
 
 ## NumPy
 [NumPy](http://www.numpy.org/) is a Python package supporting N-dimensional arrays and linear algebra operations. We'll mostly use it to manipulate datapoints stored in matrices (two-dimensional arrays).
