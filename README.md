@@ -24,7 +24,9 @@ python TP1/tp1.py
 ## Resources
 * [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/)
 * [Python 2.7 tutorial](https://docs.python.org/2.7/tutorial/)
+* [Python at OverAPI](http://overapi.com/python)
 * [NumPy quickstart tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+* [NumPy cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
 * [Matplotlib.pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot)
 
 ## Python
