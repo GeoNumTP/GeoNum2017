@@ -23,7 +23,6 @@ python tp2.py spiral 24 c2
 ```
 If specified, the last argument tells the program to compute a C2 cubic spline;
 otherwise, the C1 quadratic spline is used.
-```
 
 ### ToDo
 1. Implement the computation C1 quadratic interpolating Bézier spline for a given sequence of datapoints
