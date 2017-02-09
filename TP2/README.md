@@ -1,5 +1,5 @@
 ## TP2 : Bézier splines, Ck smoothness
-In this TP, you'll implement the C1 and C2 Bézier splines.
+This TP is about implementing quadratic (C1) and cubic (C2) Bézier splines.
 
 ```bash
 cd GeoNum2017/
@@ -24,6 +24,14 @@ python tp2.py spiral 24 c2
 ```
 If specified, the last argument tells the program to compute a C2 cubic spline;
 otherwise, the C1 quadratic spline is used.
+
+### Contents
+* 'ReadData' : helper function to read datapoints from a file.
+* 'DeCasteljau' : perform the De Casteljau algorithm.
+* 'BezierCurve' : evalulate a Bézier curve.
+* 'ComputeSplineC1' : compute Bézier control points for a C1 quadratic spline.
+* 'ComputeSplineC2' : compute Bézier control points for a C2 cubic spline.
+* main part : evaluation and plotting.
 
 ### ToDo
 1. Implement the computation of control points of a quadratic interpolating Bézier spline for a given sequence of points (function `ComputeSplineC1`). Evaluate and visualise the available datasets.

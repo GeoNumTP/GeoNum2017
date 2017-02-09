@@ -103,9 +103,8 @@ def ComputeSplineC1( DataPts ) :
     # input: DataPts = [P_0; P_1; ... ; P_n]
     n = DataPts.shape[0]-1
     
-    # BezierPts matrix will contain (2n+1) rows.
-    #   n+1  :  end Bezier control pts (input data)
-    #   n    :  inner Bezier control pts
+    # BezierPts matrix will contain (2n+1) rows :
+    #   n+1 rows for input data and n rows for inner Bezier control pts.
     BezierPts = np.zeros([2*n+1,2])
     
     ##
@@ -137,11 +136,25 @@ def ComputeSplineC2( DataPts ) :
     R = np.zeros([3*n+1,2])
     
     ##
-    ## TODO : Fill M.
+    ## TODO : Fill the matrix of the system M.
     ##          C0  :  n+1 rows
     ##          C1  :  n-1 rows
     ##          C2  :  n-1 rows
-    ##          bd  :    2 rows
+    ##          bd  :    2 rows (natural spline)
+    ##
+    ## with 4 datapoints and 10 Bezier points A ... J,
+    ## the matrix has the following form:
+    ## M =                                               : corresp. equation   [type]
+    ##  |  1   0   0   0   0   0   0   0   0   0  |      : A = A                [C0]
+    ##  |  0   0   0   1   0   0   0   0   0   0  |      : D = D                [C0]
+    ##  |  0   0   0   0   0   0   1   0   0   0  |      : G = G                [C0]
+    ##  |  0   0   0   0   0   0   0   0   0   1  |      : J = J                [C0]
+    ##  |  0   0   1  -2   1   0   0   0   0   0  |      : C - 2D + E = 0       [C1]
+    ##  |  0   0   0   0   0   1  -2   1   0   0  |      : F - 2G + H = 0       [C1]
+    ##  |  0   1  -2   0   2  -1   0   0   0   0  |      : B - 2C + 2E - F = 0  [C2]
+    ##  |  0   0   0   0   1  -2   0   2  -1   0  |      : E - 2F + 2H - I = 0  [C2]
+    ##  |  1  -2   1   0   0   0   0   0   0   0  |      : A - 2B + C = 0       [natural]
+    ##  |  0   0   0   0   0   0   0   1  -2   1  |      : H - 2I + J = 0       [natural]
     ##
     
     ##
@@ -200,6 +213,9 @@ if __name__ == "__main__":
             
             ##
             ## TODO : Put the control points of i-th spline segment into iBezierPts.
+            ##        - for a quadratic segment (C1 spline), you need 3 control points.
+            ##        - for a cubic segment (C2 spline), you need 4 control points.
+            ##
             ##        When it's done, uncomment the following code to compute and plot the segment.
             ##
             
