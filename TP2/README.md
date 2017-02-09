@@ -1,5 +1,6 @@
-## TP2 : Bézier splines, $C^k$ smoothness
-In this TP, you'll implement the De Casteljau’s algorithm, and you'll use it to compute and visualise the curves in the `data` folder.
+## TP2 : Bézier splines, Ck smoothness
+In this TP, you'll implement the C1 and C2 Bézier splines.
+
 ```bash
 cd GeoNum2017/
 git pull
@@ -25,7 +26,7 @@ If specified, the last argument tells the program to compute a C2 cubic spline;
 otherwise, the C1 quadratic spline is used.
 
 ### ToDo
-1. Implement the computation C1 quadratic interpolating Bézier spline for a given sequence of datapoints
-(`ComputeSplineC1`). Evaluate and visualise the spline for all datasets and various sampling densities.
-1. Implement the computation C2 cubic interpolating Bézier spline for a given sequence of datapoints
-(`ComputeSplineC2`). Evaluate and visualise the spline for all datasets and various sampling densities.
+1. Implement the computation of control points of a quadratic interpolating Bézier spline for a given sequence of points $\mathbf p_i$ (function `ComputeSplineC1`). Evaluate and visualise splines the available datasets.
+2. Try changing the position of $\mathbf b_1^0$. What happens?
+1. Implement the computation of control points of a cubic interpolating Bézier spline for a given sequence of points $\mathbf p_i$ (function `ComputeSplineC2`). Evaluate and visualise splines the available datasets.
+2. Compare the results with C1 splines.
