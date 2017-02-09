@@ -26,11 +26,11 @@ If specified, the last argument tells the program to compute a C2 cubic spline;
 otherwise, the C1 quadratic spline is used.
 
 ### Contents
-* 'ReadData' : helper function to read datapoints from a file.
-* 'DeCasteljau' : perform the De Casteljau algorithm.
-* 'BezierCurve' : evalulate a Bézier curve.
-* 'ComputeSplineC1' : compute Bézier control points for a C1 quadratic spline.
-* 'ComputeSplineC2' : compute Bézier control points for a C2 cubic spline.
+* `ReadData` : helper function to read datapoints from a file.
+* `DeCasteljau` : perform the De Casteljau algorithm.
+* `BezierCurve` : evalulate a Bézier curve.
+* `ComputeSplineC1` : compute Bézier control points for a C1 quadratic spline.
+* `ComputeSplineC2` : compute Bézier control points for a C2 cubic spline.
 * main part : evaluation and plotting.
 
 ### ToDo
