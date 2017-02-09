@@ -12,7 +12,7 @@ python TP1/tp1.py
 
 ## Syllabus
 1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
-1. Bézier splines
+1. Bézier splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp2.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP2#tp2--bézier-splines-ck-smoothness)  
 1. B-splines
 1. Subdivision curves
 1. Subdivision B-curves
