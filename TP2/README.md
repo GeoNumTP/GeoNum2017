@@ -37,4 +37,4 @@ otherwise, the C1 quadratic spline is used.
 1. Implement the computation of control points of a quadratic interpolating Bézier spline for a given sequence of points (function `ComputeSplineC1`). Evaluate and visualise the available datasets.
 1. Try changing the position of b_1^0. What happens?
 1. (*bonus*) Implement the computation of control points of a cubic interpolating Bézier spline for a given sequence of points (function `ComputeSplineC2`). Evaluate and visualise the available datasets.
-1. Compare the results with C1 splines.
+1. Compare the results with C1 splines. What changed?
