@@ -19,8 +19,9 @@ As before, you can pass parameters directly as command line args:
 ```bash
 python tp4.py [simple,infinity,bone,bunny]  [scheme=CH,CC,FP]  [subdivision depth]
 ```
+
 For instance, to subdivide the `bone` dataset with 5 iterations of four-point:
-```bash# example
+```bash
 python tp4.py bone FP 5
 ```
 
