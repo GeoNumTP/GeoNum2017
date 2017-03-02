@@ -32,7 +32,7 @@ python tp4.py bone FP 5
 
 ### ToDo
 1. Implement the three subdivision schemes.
-2. Experiment with different values of $a,b$ in corner cutting. Specifically, try using
+2. Experiment with different values of a, b in corner cutting. Specifically, try using
      - b =a+0.5
      - b~=a+0.5
    
