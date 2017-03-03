@@ -131,13 +131,14 @@ def FourPoint( X0, w ) :
 #-------------------------------------------------
 if __name__ == "__main__":
     
+    # helper function for getting scheme name from ID
     def fullname(x):
         return {
             "CH" : "Chaikin",
             "CC" : "Corner cutting",
             "FP" : "Four-point",
         }.get(x,"Invalid")
-    
+
     ###############################
     ## arg 1 : data name 
     ###############################
@@ -145,7 +146,6 @@ if __name__ == "__main__":
         dataname = sys.argv[1]
     else :
         dataname = "simple" # [simple,infinity]
-    
     ###############################
     ## arg 2 : subdivision scheme
     ###############################
@@ -157,15 +157,15 @@ if __name__ == "__main__":
         print " error :  invalid scheme "+scheme
         print "          should be CH, CC or FP"
         sys.exit(0)
-    
     ###############################
     ## arg 3 : depth of subdivision
     ###############################
     if len(sys.argv) > 3 :
         depth = int(sys.argv[3])
     else :
-        depth = 5
-        
+        depth = 3
+    
+    # output : scheme name and subdivision depth
     print " "+fullname(scheme)
     print " depth = " + str(depth)
     
@@ -178,11 +178,14 @@ if __name__ == "__main__":
         print " usage :  python tp4.py  [data=simple,infinity,bone,bunny]  [scheme=CH,CC,FP]  [depth=3]"
         
     else :
-        # parameters TO MODIFY
-        # -- corner cutting
+
+        ##
+        ## TODO Experiment with various parameters.
+        ##
+        ## -- Corner cutting
         a = 0.2
         b = 0.8
-        # -- generalized four-point
+        ## -- Generalized four-point
         w = 0.05
         
         # read datapoints
