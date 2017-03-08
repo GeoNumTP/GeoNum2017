@@ -82,8 +82,42 @@ def LaneRiesenfeld(X0,degree) :
 
 
 #-------------------------------------------------
+# FOURPOINT()
+# Perform one iteration of the 4-point Lane-Riesenfeld subdivision.
+# 
+# Input
+#    X0       :  n x 2 matrix, initial polygon
+#    degree   :  degree of subdivision
+#
+# Output
+#    X1       :  2n x 2 matrix, subdivided polygon
+#
+#
+# reference paper:
+#   Cashman et al.
+#   Generalized Lane–Riesenfeld algorithms
+#   2013. Computer Aided Geometric Design
+#   http://dx.doi.org/10.1016/j.cagd.2013.02.001
+#
+#
+def FourPoint(X0,degree) :
+    
+    # number of points
+    n = X0.shape[0]
+    
+    # upsample
+    X1 = np.zeros([2*n,2])
+    
+    ##
+    ## TODO Implement the 4-point LR scheme.
+    ##
+    
+    return X1
+
+
+#-------------------------------------------------
 # SIXPOINT()
-# Perform one iteration of the six-point subdivision.
+# Perform one iteration of the 6-point Lane-Riesenfeld subdivision.
 # 
 # Input
 #    X0       :  n x 2 matrix, initial polygon
@@ -109,7 +143,7 @@ def SixPoint(X0,degree) :
     X1 = np.zeros([2*n,2])
     
     ##
-    ## TODO Implement the six-point scheme.
+    ## TODO Implement the 6-point LR scheme.
     ##
     
     return X1
@@ -131,14 +165,17 @@ if __name__ == "__main__":
         scheme = sys.argv[2]
     else :
         scheme = "LR"
+        
     # check
     if scheme == "LR" :
         schemeName = "Lane-Riesenfeld"
+    elif scheme == "FP" :
+        schemeName = "4-point"
     elif scheme == "SP" :
-        schemeName = "six-point scheme"
+        schemeName = "6-point"
     else :            
         print " error :  invalid scheme "+scheme
-        print "          should be LR or SP"
+        print "          should be LR or FP or SP"
         sys.exit(0)
         
     #---------------------------------------------
@@ -161,7 +198,7 @@ if __name__ == "__main__":
     # check if valid datafile
     if not os.path.isfile(filename) :
         print " error :  invalid dataname '" + dataname + "'"
-        print " usage :  python tp5.py  [data=hepta; bone,infinity,sumsign]  [scheme=LR; SP]  [degree=3]  [subdivisions=5]"
+        print " usage :  python tp5.py  [data=hepta; bone,infinity,sumsign]  [scheme=LR; FP,SP]  [degree=3]  [subdivisions=5]"
         
     else :
         
@@ -178,7 +215,11 @@ if __name__ == "__main__":
             if scheme == "LR" :
                 X = LaneRiesenfeld(X,degree)
                 
-            # Six-point scheme
+            # 4-point
+            elif scheme == "FP" :
+                X = FourPoint(X,degree)
+                
+            # 6-point
             else :
                 X = SixPoint(X,degree)
         

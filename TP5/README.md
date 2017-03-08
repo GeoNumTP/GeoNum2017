@@ -28,6 +28,7 @@ python tp5.py sumsign SP 3
 
 ### Functions to modify
 * `LaneRiesenfeld` : perform one iteration of the Lane-Riesenfeld algorithm.
+* `FourPoint` : perform one iteration of four-point variant of LR.
 * `SixPoint` : perform one iteration of six-point variant of LR.
 
 ### Lane-Riesenfeld
