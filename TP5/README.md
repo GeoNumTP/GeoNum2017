@@ -34,10 +34,7 @@ python tp5.py sumsign SP 3
 The Lane-Riesenfeld algorithm is a subdivision scheme which serves for efficient evaluation of uniform B-splines.
 As for the subdivision schemes we've seen in the previous TP,
 two steps are needed to compute the subdivided polygon `X1` from the base polygon `X0`.
-```python
-n = X0.shape[0]
-X1 = np.zeros([2*n,2])
-```
+
 In the topological step, the Lane-Riesenfeld scheme doubles the amount of points by taking each initial point twice.
 ```
 P0 P0 P1 P1 ... Pn Pn
