@@ -21,7 +21,7 @@ python tp5.py  [data=hepta; bone,infinity,sumsign]  [scheme=LR; SP]  [curve degr
 ```
 `LR` stands for Lane-Riesenfeld algorithm, `SP` is the six-point scheme.
 
-For instance, to subdivide the `bone` dataset with degree 3 six-point:
+For instance, to subdivide the `sumsign` dataset with degree 3 six-point:
 ```bash
 python tp5.py sumsign SP 3
 ```
