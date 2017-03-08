@@ -52,8 +52,8 @@ For k=2:
 ```
 
 ### ToDo
-1. Implement the two subdivision schemes. Test with the provided datasets.
+1. Implement the three subdivision schemes. Test with the provided datasets.
 1. Try varying the degree parameter. How do the curves change?
-1. What differences between the two schemes do you observe?  
+1. What differences between the three schemes do you observe?  
 In your opinion, which scheme gives better results? Why?
 1. Simplify the original Lane-Riesenfeld scheme for degree k=2. What do you observe?
