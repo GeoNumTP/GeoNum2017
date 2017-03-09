@@ -64,7 +64,7 @@ where the new vertices Ri are not doubled, but computed as
 R_i = 1/16 * (- P_i-1 + 9*P_i + 9*P_i+1 - P_i+2)                                 # 4-point
 R_i = 1/256 * (3*P_i-2 - 25*P_i-1 + 150*P_i + 150*P_i+1 - 25*P_i+2 + 3*P_i+3)    # 6-point
 ```
-Smoothing: the new sequence is the smoothed k times, using the same masks as in the refining step, but applied on the new sequence.
+Smoothing: as in the original agorithm, we then smooth k times using the same masks as in the refining step, but applied on the new sequence.
 
 ### ToDo
 1. Implement the three subdivision schemes. Test with the provided datasets.
