@@ -17,9 +17,9 @@ python tp5.py
 
 As before, you can pass parameters directly as command line args:
 ```bash
-python tp5.py  [data=hepta; bone,infinity,sumsign]  [scheme=LR; SP]  [curve degree]  [subdivision depth]
+python tp5.py  [data=hepta; bone,infinity,sumsign]  [scheme=LR; FP,SP]  [curve degree]  [subdivision depth]
 ```
-`LR` stands for Lane-Riesenfeld algorithm, `SP` is the six-point scheme.
+`LR` stands for Lane-Riesenfeld algorithm, `FP` is the four-point scheme, `SP` is the six-point scheme.
 
 For instance, to subdivide the `sumsign` dataset with degree 3 six-point:
 ```bash
