@@ -95,7 +95,7 @@ def LaneRiesenfeld(X0,degree) :
 #
 # reference paper:
 #   Cashman et al.
-#   Generalized Lane–Riesenfeld algorithms
+#   Generalized Lane-Riesenfeld algorithms
 #   2013. Computer Aided Geometric Design
 #   http://dx.doi.org/10.1016/j.cagd.2013.02.001
 #
