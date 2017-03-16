@@ -124,7 +124,7 @@ if __name__ == "__main__":
         density = 10
 
     # filename
-    filename = TP+"data/"+dataname+".bpt"
+    filename = DATADIR+dataname+".bpt"
     
     # check if valid datafile
     if not os.path.isfile(filename) :
