@@ -35,10 +35,10 @@ DATADIR = TP+"data/"
 # Read Bezier control net from a BPT file.
 #
 # Input
-#    filename :  file to be read
+#    filename    :  file to be read
 #
 # Output
-#    X, Y, Z  :  three matrices, one for each (3d) coordinate of the control mesh
+#    Mx, My, Mz  :  three matrices, one for each coordinate of the control mesh
 #
 def ReadBezierMesh( datafile ) :
     line = datafile.readline()
@@ -53,8 +53,7 @@ def ReadBezierMesh( datafile ) :
 # Compute point on a Bezier surface using the De Casteljau algorithm.
 #
 # Input
-#    M        :  m x n matrix
-#                control mesh, one coordinate
+#    M        :  m x n matrix, control mesh (one coordinate)
 #    u, v     :  parameters
 #
 # Output      :  one coordinate of the surface point S(u,v)
@@ -67,7 +66,7 @@ def DeCasteljau(M,u,v) :
     # hint:
     # The above signature is for non-recursive implementation.
     # For recursive implementation, you can use
-    #   def DeCasteljau(X,k,l,i,j,u,v) :
+    #   def DeCasteljau(M,k,l,i,j,u,v) :
     #
     
     pass
@@ -78,13 +77,11 @@ def DeCasteljau(M,u,v) :
 # Compute Bezier surface points.
 #
 # Input
-#    M        :  m x n matrix
-#                control mesh, one coordinate
+#    M        :  m x n matrix, control mesh (one coordinate)
 #    density  :  sampling density
 #
 # Output
-#    S        :  density x density matrix
-#                surface points, one coordinate
+#    S        :  density x density matrix, surface points (one coordinate)
 #
 # Note :
 # This function is later called three times,
@@ -146,21 +143,21 @@ if __name__ == "__main__":
         viewer = Viewer("TP6 : Bezier surfaces ["+dataname+"]",[1200,800])
 
         # read and compute each patch
-        for p in range(0,numpatch) :
+        for p in range(numpatch) :
             
             # print patch id
             print " patch",p+1,"/",numpatch
             
             # read Bezier control points
-            BX, BY, BZ = ReadBezierMesh( datafile )
+            Mx, My, Mz = ReadBezierMesh( datafile )
             
             # compute surface points
-            X = BezierSurf( BX, density )
-            Y = BezierSurf( BY, density )
-            Z = BezierSurf( BZ, density )
+            Sx = BezierSurf( Mx, density )
+            Sy = BezierSurf( My, density )
+            Sz = BezierSurf( Mz, density )
             
             # add patch to the Viewer
-            viewer.add_patch(X,Y,Z)
+            viewer.add_patch(Sx,Sy,Sz)
 
         # print final message
         print " done."
