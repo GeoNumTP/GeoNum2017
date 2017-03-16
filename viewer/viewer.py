@@ -153,6 +153,7 @@ class Viewer():
         print "------------------------------------------------"
         print "  left click & drag  = rotate"
         print "  mouse scroll       = zoom"
+        print "  pageup/pagedown    = zoom"
         print "  [ E ]              = toggle wireframe"
         print "  [ N ]              = toggle color by normals"
         print "  [ F ]              = flip normals"
@@ -198,6 +199,14 @@ class Viewer():
         
         
     def key_callback( self, window, key, scancode, action, mods ) :
+        if key == glfw.KEY_PAGE_UP :
+            self.zoom *= 0.9
+            self.recompute_matrices()
+            return
+        if key == glfw.KEY_PAGE_DOWN :
+            self.zoom *= 1.1
+            self.recompute_matrices()
+            return
         if key == glfw.KEY_E and action == glfw.PRESS :
             self.wire = not self.wire
             return
@@ -502,7 +511,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 :
         dataname = sys.argv[1]
     else :
-        dataname = "cheburashka"
+        dataname = "bumpy"
 
     V,F = test_mesh(dataname)
     

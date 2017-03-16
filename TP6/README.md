@@ -13,13 +13,13 @@ or, if you don't have the local repo
 ```bash
 git clone https://github.com/GeoNumTP/GeoNum2017.git
 ```
-You should have the `TP6/`, but also the `viewer/` and two bash scripts: `setupPackages.sh` and `exportPath.sh`.
-Run
+You should now have the `TP6/` and `viewer/` folders, plus two new bash scripts: `setupPackages.sh` and `exportPath.sh`.
+Execute the following commands:
 ```bash
 # download and extract packages
 ./setupPackages.sh
 # export python path
-# note the extra dot in the beginning
+# the extra dot in the beginning makes this change global
 . ./exportPath.sh
 ```
 
@@ -36,11 +36,14 @@ python tp6.py  [simple,wave,sphere,heart,teapot,teacup,teaspoon]  [density=10]
 ### Representation
 On the implementation level, the biggest difference between curves and surfaces is the representation we'll use.
 Before, we used a single matrix to represent the whole curve -- each coordinate was stored in a separate column.
-We can no longer do this for surfaces. Instead, we'll represent the surface using three matrices `X`, `Y` and `Z`,
-one for each coordinate.
+For surfaces, we could do something similar using three-dimensional arrays; instead, to facilitate understanding of the code, we'll represent the three coordinates in separate matrices `Mx`, `My` and `Mz` (or `Sx`, `Sy`, `Sz` for surface points).
 
 ### Functions to modify
 * `DeCasteljau` : implement the De Casteljau algorithm for surfaces.
 * `BezierSurf` : compute Bezier surface points.
 
 ### ToDo
+1. Implement the evaluation of Bézier surfaces for (u,v) in [0,1]².
+Use `simple` and `wave` for first tests (these contain only one patch).
+2. When you're sure the implementation works for the simple cases, test your algorithm on datasets with multiple patches:
+`heart` (2),  `sphere` (8),  `teapot` (32), `teacup` (26), `teaspoon` (16). Don't set the `density` parameter too high, always start with smaller values (5 or 10) as the number of computed points is `density`².
