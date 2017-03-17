@@ -1,4 +1,25 @@
 ## TP6 : Bezier surfaces
+
+### UPDATE : using matplotlib
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure()
+ax = fig.add_subplot(111,projection='3d')
+ax.axis('equal')
+ax.axis('off')
+
+...
+
+for p in range(numpatch) :
+    ...
+    ax.plot_wireframe(X, Y, Z)
+    ...
+
+plt.show()
+```
+---
+
 Today, we start working with surfaces, which means transition from 2D to 3D. We will use OpenGL for rendering, but don’t worry if you have little or no experience with OpenGL; a wrapper class `Viewer` is provided. Adding a surface patch is as easy as calling
 ```python
 viewer.add_patch(X,Y,Z)
