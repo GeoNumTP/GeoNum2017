@@ -259,7 +259,7 @@ class Viewer():
         self.show_help()
         
         
-    def add_patch(self,X,Y,Z) :
+    def add_patch(self,X,Y,Z,wireframe=False) :
         
         # extract sampling density
         samples = X.shape[0]
@@ -293,10 +293,10 @@ class Viewer():
         E[:,1] = i01 + i11 + i10 + i00
         
         # add the mesh
-        self.add_mesh(V,F,E)
+        self.add_mesh(V,F,E,wireframe)
         
         
-    def add_mesh(self,V,F,E=None) :
+    def add_mesh(self,V,F,E=None,wireframe=False) :
         
         # Calculate edges if not provided    
         if E is None :
@@ -307,16 +307,16 @@ class Viewer():
             E[:,0] = np.concatenate([f0, f1, f2])
             E[:,1] = np.concatenate([f1, f2, f0]) 
         
-        # Shift if needed
-        if self.faces.shape[0] > 0 :
-            F += self.faces.max()+1
-            E += self.faces.max()+1
+        # Shift if needed            
+        if self.edges.shape[0] > 0 :
+            F += self.edges.max()+1
+            E += self.edges.max()+1
         
         # Store
         self.verts = np.concatenate( (self.verts, V ), axis=0 )
-        self.faces = np.concatenate( (self.faces, F ), axis=0 )
         self.edges = np.concatenate( (self.edges, E ), axis=0 )
-        
+        if not wireframe :
+            self.faces = np.concatenate( (self.faces, F ), axis=0 )
         
     def render(self) :
     
@@ -390,7 +390,9 @@ class Viewer():
         
         # Scale to uniform length
         diag = self.verts.max(0)-self.verts.min(0)
-        self.scale = 1. / np.linalg.norm(diag)
+        aabb = np.linalg.norm(diag)
+        if aabb > 0 :
+            self.scale = 1. / aabb
         
         # Snap to centroid
         self.verts -= 0.5*(self.verts.max(0)+self.verts.min(0))

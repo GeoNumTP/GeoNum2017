@@ -52,8 +52,8 @@ if [ ! -f "$(pwd)/lib/python2.7/site-packages/glfw.py" ]; then
     cd ..
     echo "-------------------------------"
     echo "Clean"
-    rm -f PyOpenGL-3.1.1a1.tar.gz
-    rm -rf PyOpenGL-3.1.1a1/
+    rm -f glfw-1.3.3.tar.gz
+    rm -rf glfw-1.3.3/
 else
     echo "PyGLFW is already installed in lib/python2.7/site-packages/"
     echo "Skipping..."
