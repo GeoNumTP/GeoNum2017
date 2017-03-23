@@ -13,9 +13,9 @@ This will download and compile `PyOpenGL`, `PyGLFW` and `GLFW` (as a static libr
 The `libglfw.so*` files are automatically copied to repo's root dir.
 For the viewer to function properly, **python scripts need to be executed from the root dir**.
 ```bash
-// test the viewer
+# test the viewer
 python viewer/viewer.py
-// test TP7
+# test TP7
 python TP7/tp7.py
 ```
 
