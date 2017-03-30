@@ -1,4 +1,4 @@
-# TP7 : B-spline surfaces
+# TP8 : Uniform B-splines as Subdivision Surfaces
 
 ## Setup
 ```bash
