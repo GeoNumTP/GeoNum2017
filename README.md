@@ -18,7 +18,7 @@ python TP1/tp1.py
 1. Lane-Riesenfeld | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp5.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP5#tp5--lane-riesenfeld-algorithm) 
 1. Bézier surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp6.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP6#tp6--bezier-surfaces)
 1. B-spline surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp7.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP7#tp7--b-spline-surfaces)
-1. Subdivision B-surfaces
+1. Subdivision B-surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp8.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP8#tp8--uniform-b-splines-as-subdivision-surfaces)
 1. Triangle mesh subdivision
 
 ## Resources
