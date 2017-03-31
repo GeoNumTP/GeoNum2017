@@ -262,19 +262,20 @@ class Viewer():
     def add_patch(self,X,Y,Z,wireframe=False) :
         
         # extract sampling density
-        samples = X.shape[0]
+        u = X.shape[0]
+        v = X.shape[1]
         
         # vertices
-        V = np.empty([samples*samples,3],dtype=np.float32)
-        V[:,0] = X.reshape(samples*samples)
-        V[:,1] = Y.reshape(samples*samples)
-        V[:,2] = Z.reshape(samples*samples)
+        V = np.empty([u*v,3],dtype=np.float32)
+        V[:,0] = X.reshape(u*v)
+        V[:,1] = Y.reshape(u*v)
+        V[:,2] = Z.reshape(u*v)
         
         # grid indices
-        i0 = range(0,samples*(samples-1))
-        i1 = range(samples,samples**2)
-        frst = [samples*i   for i in range(0,samples  )]
-        last = [samples*i-1 for i in range(1,samples+1)]
+        i0 = range(0,(u-1)*v)
+        i1 = range(v, u   *v)
+        frst = [v*i   for i in range(0,u  )]
+        last = [v*i-1 for i in range(1,u+1)]
         
         i00 = list( set(i0) - set(last) )
         i01 = list( set(i0) - set(frst) )
@@ -282,13 +283,13 @@ class Viewer():
         i11 = list( set(i1) - set(frst) )
         
         # faces
-        F = np.empty([2*(samples-1)**2,3],dtype=np.uint32)
+        F = np.empty([2*(u-1)*(v-1),3],dtype=np.uint32)
         F[:,0] = i00 + i11
         F[:,1] = i01 + i10
         F[:,2] = i11 + i00
         
         # edges
-        E = np.empty([4*(samples-1)**2,2],dtype=np.uint32)
+        E = np.empty([4*(u-1)*(v-1),2],dtype=np.uint32)
         E[:,0] = i00 + i01 + i11 + i10
         E[:,1] = i01 + i11 + i10 + i00
         
