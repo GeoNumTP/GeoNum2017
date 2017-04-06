@@ -22,6 +22,6 @@ python TP9/tp9.py
 * `LoopSubdivision` : perform one iteration of Loop subdivision.
 
 ## ToDo
-1. Implement the computation of new geometry in the Loop subdivision scheme using the original weights $\beta$.
-2. Use the simplified weights (Warren) and compare the results.
+1. Implement the computation of the Loop subdivision scheme using the original weights (Loop).
+2. Use the simplified weights (Warren) and compare the results on provided surfaces.
 3. Subdivide the sphere and cube five times. Which surface is closer to the real sphere? Why?
